@@ -18,7 +18,7 @@ df['embeddings'] = df['embeddings'].apply(eval).apply(np.array)
 
 
 def create_context(
-    question, df, max_len=1800, size="ada"
+    question, df, max_len=1800, size="ada", debug=False
 ):
     """
     Create a context for a question by finding the most similar context from the dataframe
@@ -88,7 +88,7 @@ def answer_question(
         df,
         max_len=max_len,
         size=size,
-        debug=false,
+        #debug=False, #debug=false, see 21 line
     )
     # If debug, print the raw model response
     if debug:
